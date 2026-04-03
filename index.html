@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nakanjako Nuswaibah - Aspiring Library and Information Professional | Student Leader | Community-Oriented">
+    <title>Nakanjako Nuswaibah | Professional Portfolio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome 6 (free icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-deep: #0F4C3F;
+            --primary-light: #1A5A4C;
+            --accent-gold: #E8B923;
+            --gray-soft: #F9F9F9;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Hero gradient */
+        .hero-bg {
+            background: linear-gradient(125deg, #0F4C3F 0%, #1A5A4C 55%, #0F4C3F 100%);
+            position: relative;
+            isolation: isolate;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 40%, rgba(232,185,35,0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        
+        /* Professional animations */
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes scaleIn {
+            0% { opacity: 0; transform: scale(0.92); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes slideInLeft {
+            0% { opacity: 0; transform: translateX(-35px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInRight {
+            0% { opacity: 0; transform: translateX(35px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes floatSoft {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 0 0 rgba(232,185,35,0.3); }
+            70% { box-shadow: 0 0 0 12px rgba(232,185,35,0); }
+            100% { box-shadow: 0 0 0 0 rgba(232,185,35,0); }
+        }
+        
+        .animate-fade-up {
+            animation: fadeUp 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+        }
+        
+        .animate-scale-in {
+            animation: scaleIn 0.7s ease-out forwards;
+        }
+        
+        .animate-slide-left {
+            animation: slideInLeft 0.7s ease forwards;
+        }
+        
+        .animate-slide-right {
+            animation: slideInRight 0.7s ease forwards;
+        }
+        
+        .float-element {
+            animation: floatSoft 4s ease-in-out infinite;
+        }
+        
+        .stagger-item {
+            opacity: 0;
+        }
+        
+        /* Section underline premium */
+        .section-accent {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-accent:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background: var(--accent-gold);
+            border-radius: 3px;
+            transition: width 0.4s ease;
+        }
+        
+        .section-accent-left:after {
+            left: 0;
+            transform: none;
+            width: 64px;
+        }
+        
+        /* Navbar glass morphism */
+        .nav-scrolled {
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+        
+        /* Card interaction */
+        .card-lift {
+            transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        
+        .card-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 35px -12px rgba(15, 76, 63, 0.15);
+        }
+        
+        /* Hover border glow */
+        .input-focus-glow:focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(232,185,35,0.2);
+        }
+        
+        /* custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-deep);
+            border-radius: 8px;
+        }
+        
+        .timeline-dot {
+            box-shadow: 0 0 0 4px rgba(232,185,35,0.3);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- NAVBAR (sticky with dynamic scroll) -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 lg:h-[72px]">
+                <div class="flex items-center gap-x-3">
+                    <div class="w-9 h-9 bg-[#0F4C3F] rounded-2xl flex items-center justify-center text-white text-xl font-bold shadow-md">NN</div>
+                    <h1 class="heading-font text-2xl font-semibold text-[#0F4C3F] tracking-tight">Nuswaibah</h1>
+                </div>
+                
+                <!-- Desktop Links -->
+                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                    <a href="#home" class="text-gray-700 hover:text-[#0F4C3F] transition-colors duration-200">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-[#0F4C3F] transition-colors duration-200">About</a>
+                    <a href="#experience" class="text-gray-700 hover:text-[#0F4C3F] transition-colors duration-200">Experience</a>
+                    <a href="#education" class="text-gray-700 hover:text-[#0F4C3F] transition-colors duration-200">Education</a>
+                    <a href="#leadership" class="text-gray-700 hover:text-[#0F4C3F] transition-colors duration-200">Leadership</a>
+                    <a href="#skills" class="text-gray-700 hover:text-[#0F4C3F] transition-colors duration-200">Skills</a>
+                    <a href="#contact" class="text-gray-700 hover:text-[#0F4C3F] transition-colors duration-200">Contact</a>
+                </div>
+                
+                <!-- CTA desktop -->
+                <a href="#contact" class="hidden md:inline-flex items-center gap-x-2 bg-[#E8B923] hover:bg-[#D9A61F] text-[#0F4C3F] font-semibold px-6 py-3 rounded-3xl text-sm tracking-wide transition-all duration-200 shadow-sm hover:shadow-md">
+                    <i class="fa-regular fa-paper-plane"></i> HIRE ME
+                </a>
+                
+                <!-- Mobile button -->
+                <button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center text-2xl text-[#0F4C3F] focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div id="mobileMenuPanel" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="px-6 py-6 flex flex-col gap-y-5 text-base font-medium">
+                <a href="#home" class="mobile-nav-link text-gray-700 hover:text-[#0F4C3F] flex items-center gap-x-3 py-1"><i class="fa-solid fa-house w-5"></i> Home</a>
+                <a href="#about" class="mobile-nav-link text-gray-700 hover:text-[#0F4C3F] flex items-center gap-x-3 py-1"><i class="fa-solid fa-user w-5"></i> About</a>
+                <a href="#experience" class="mobile-nav-link text-gray-700 hover:text-[#0F4C3F] flex items-center gap-x-3 py-1"><i class="fa-solid fa-briefcase w-5"></i> Experience</a>
+                <a href="#education" class="mobile-nav-link text-gray-700 hover:text-[#0F4C3F] flex items-center gap-x-3 py-1"><i class="fa-solid fa-graduation-cap w-5"></i> Education</a>
+                <a href="#leadership" class="mobile-nav-link text-gray-700 hover:text-[#0F4C3F] flex items-center gap-x-3 py-1"><i class="fa-solid fa-medal w-5"></i> Leadership</a>
+                <a href="#skills" class="mobile-nav-link text-gray-700 hover:text-[#0F4C3F] flex items-center gap-x-3 py-1"><i class="fa-solid fa-code w-5"></i> Skills</a>
+                <a href="#contact" class="mobile-nav-link text-gray-700 hover:text-[#0F4C3F] flex items-center gap-x-3 py-1"><i class="fa-solid fa-envelope w-5"></i> Contact</a>
+                <div class="pt-4 mt-2 border-t"><a href="#contact" class="flex justify-center bg-[#E8B923] text-[#0F4C3F] font-bold py-3 rounded-3xl">Get in touch</a></div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-24 md:pt-0">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-24">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <!-- Left content animated -->
+                <div class="md:col-span-7 space-y-7 stagger-hero">
+                    <div class="inline-flex items-center gap-x-3 bg-white/10 backdrop-blur-md text-white text-sm font-medium px-5 py-2.5 rounded-full border border-white/20 animate-fade-up">
+                        <span class="w-2.5 h-2.5 bg-[#E8B923] rounded-full animate-pulse"></span>
+                        KAMPALA, UGANDA · CLASS OF 2028
+                    </div>
+                    <h1 class="heading-font text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tighter text-white animate-fade-up" style="animation-delay: 0.1s;">
+                        Nakanjako<br>Nuswaibah
+                    </h1>
+                    <p class="text-2xl md:text-3xl text-[#E8B923] font-light animate-fade-up" style="animation-delay: 0.2s;">
+                        Library & Information Systems
+                    </p>
+                    <p class="max-w-lg text-xl text-white/90 leading-relaxed animate-fade-up" style="animation-delay: 0.3s;">
+                        Purpose-driven leader, community advocate, and future information professional. Bridging knowledge and service.
+                    </p>
+                    <div class="flex flex-wrap gap-5 pt-4 animate-fade-up" style="animation-delay: 0.4s;">
+                        <a href="#contact" class="inline-flex items-center gap-x-2 bg-white text-[#0F4C3F] hover:bg-[#E8B923] hover:text-white font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 shadow-lg">
+                            CONNECT WITH ME <i class="fa-solid fa-arrow-right ml-1 group-hover:translate-x-1"></i>
+                        </a>
+                        <a href="#about" class="inline-flex items-center gap-x-2 border-2 border-white hover:border-[#E8B923] text-white font-medium px-8 py-4 rounded-full text-lg transition-all">
+                            <i class="fa-regular fa-compass"></i> MY JOURNEY
+                        </a>
+                    </div>
+                    <!-- quick badges -->
+                    <div class="flex flex-wrap gap-6 text-sm pt-6 animate-fade-up" style="animation-delay: 0.5s;">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-trophy text-[#E8B923]"></i><span>Head Prefect</span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-users text-[#E8B923]"></i><span>Course Coordinator</span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-book-open text-[#E8B923]"></i><span>Publicity Minister</span></div>
+                    </div>
+                </div>
+                
+                <!-- Right side: Professional portrait with animation -->
+                <div class="md:col-span-5 flex justify-center md:justify-end animate-scale-in" style="animation-delay: 0.2s;">
+                    <div class="relative">
+                        <div class="w-80 h-80 md:w-[380px] md:h-[380px] bg-white rounded-[2rem] overflow-hidden shadow-2xl border-[6px] border-white relative z-10">
+                            <!-- Professional stock image replaced with a polished, clean portrait (unsplash professional) -->
+                            <img src="./875b5171-cb27-4bb7-8849-e69a305c343c.tmp" 
+                                 alt="Nakanjako Nuswaibah portrait" 
+                                 class="w-full h-full object-cover object-top">
+                        </div>
+                        <!-- Floating decorative ring -->
+                        <div class="absolute -inset-4 border border-[#E8B923]/30 rounded-[2.5rem] pointer-events-none"></div>
+                        <div class="absolute -bottom-5 -left-5 bg-white/95 backdrop-blur-sm text-[#0F4C3F] font-semibold px-5 py-2.5 rounded-full shadow-lg flex items-center gap-2 float-element">
+                            <i class="fa-solid fa-circle-check text-[#E8B923]"></i> Open to Internships
+                        </div>
+                        <div class="absolute -top-4 -right-4 bg-[#E8B923] text-[#0F4C3F] text-xs font-bold px-4 py-2 rounded-xl shadow-lg rotate-6">
+                            🇺🇬 KYU '26
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:flex flex-col items-center text-white/50 text-xs gap-1">
+            <span>Explore</span>
+            <i class="fa-solid fa-chevron-down animate-bounce"></i>
+        </div>
+    </section>
+    
+    <!-- ABOUT ME section -->
+    <section id="about" class="py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-14 items-center">
+                <div class="lg:col-span-7 stagger-item" data-animation="slide-left">
+                    <div class="inline-block bg-[#0F4C3F]/10 text-[#0F4C3F] text-sm font-semibold px-4 py-1.5 rounded-full mb-5">MY STORY</div>
+                    <h2 class="section-accent-left heading-font text-4xl lg:text-5xl font-bold text-[#0F4C3F] mb-8">From Bushenyi roots<br>to global impact</h2>
+                    <div class="space-y-5 text-gray-700 text-lg leading-relaxed">
+                        <p>Nakanjako Nuswaibah discovered her passion for learning at Pearl Junior School in Bushenyi, where Music, Dance & Drama and sports ignited her leadership spirit. As Dormitory Captain and later <strong class="text-[#0F4C3F]">Head Prefect at Prime Junior School</strong>, she built integrity early — graduating with an impressive <span class="font-bold text-[#0F4C3F]">PLE Aggregate 4</span>.</p>
+                        <p>At Plus Two High School, she flourished as Class Monitor and achieved <strong>11 aggregates at UCE</strong>. She then joined Light Secondary School for A-Level, specializing in Literature, Entrepreneurship and Art, earning <strong>13 points at UACE</strong>.</p>
+                        <p>Currently pursuing a <strong class="text-[#0F4C3F]">Bachelor of Library and Information Systems at Kyambogo University</strong>, Nuswaibah merges technological fluency with service-oriented leadership. Her journey reflects discipline, community advocacy, and an unwavering drive to uplift others.</p>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 stagger-item" data-animation="slide-right">
+                    <div class="bg-gradient-to-br from-[#0F4C3F] to-[#1A5A4C] rounded-3xl p-8 text-white shadow-2xl">
+                        <div class="flex flex-col h-full">
+                            <i class="fa-solid fa-gem text-5xl text-[#E8B923] mb-6 opacity-80"></i>
+                            <p class="text-3xl font-light leading-tight">Discipline.<br>Leadership.<br>Community-first.</p>
+                            <div class="mt-8 flex justify-between items-end">
+                                <div><span class="text-5xl font-bold text-[#E8B923]">4</span><span class="text-sm ml-1">PLE</span></div>
+                                <div><span class="text-5xl font-bold text-[#E8B923]">11</span><span class="text-sm ml-1">UCE</span></div>
+                                <div><span class="text-5xl font-bold text-[#E8B923]">13</span><span class="text-sm ml-1">UACE</span></div>
+                            </div>
+                            <div class="mt-6 text-[#E8B923]/70 text-xs tracking-widest">ACADEMIC EXCELLENCE</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- EXPERIENCE section (exposure cards) -->
+    <section id="experience" class="py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 stagger-item" data-animation="fade-up">
+                <span class="text-[#E8B923] font-bold bg-[#E8B923]/10 px-4 py-1.5 rounded-full text-sm">REAL-WORLD EXPOSURE</span>
+                <h2 class="heading-font text-4xl lg:text-5xl font-bold text-[#0F4C3F] mt-4">Experience & Growth</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-7">
+                <div class="bg-white rounded-3xl p-8 shadow-md card-lift stagger-item" data-animation="fade-up" data-delay="0"><i class="fa-solid fa-microchip text-5xl text-[#0F4C3F] mb-5"></i><h4 class="text-xl font-bold mb-2">Electronics Field</h4><p class="text-gray-600">Practical technical experience, troubleshooting and precision-driven problem solving.</p></div>
+                <div class="bg-white rounded-3xl p-8 shadow-md card-lift stagger-item" data-animation="fade-up" data-delay="0.1"><i class="fa-solid fa-landmark text-5xl text-[#0F4C3F] mb-5"></i><h4 class="text-xl font-bold mb-2">Electoral & NRM</h4><p class="text-gray-600">Civic mobilization, governance insight, and community engagement initiatives.</p></div>
+                <div class="bg-white rounded-3xl p-8 shadow-md card-lift stagger-item" data-animation="fade-up" data-delay="0.2"><i class="fa-solid fa-tree text-5xl text-[#0F4C3F] mb-5"></i><h4 class="text-xl font-bold mb-2">Uganda Exploration</h4><p class="text-gray-600">Visited national parks & resorts, expanding cultural awareness and resilience.</p></div>
+                <div class="bg-white rounded-3xl p-8 shadow-md card-lift stagger-item" data-animation="fade-up" data-delay="0.3"><i class="fa-solid fa-hand-holding-heart text-5xl text-[#0F4C3F] mb-5"></i><h4 class="text-xl font-bold mb-2">Family & Community</h4><p class="text-gray-600">Supporting family responsibilities while serving local communities actively.</p></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- EDUCATION (clean timeline) -->
+    <section id="education" class="py-28 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-14"><span class="bg-[#0F4C3F]/10 text-[#0F4C3F] font-semibold px-5 py-1.5 rounded-full">ACADEMIC JOURNEY</span><h2 class="heading-font text-4xl lg:text-5xl font-bold text-[#0F4C3F] mt-4">Education</h2></div>
+            <div class="space-y-6 max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-6 bg-white border border-gray-100 rounded-2xl p-7 shadow-sm card-lift stagger-item" data-animation="fade-up"><div class="md:w-1/4"><div class="bg-[#0F4C3F] w-14 h-14 rounded-2xl flex items-center justify-center text-white text-2xl">🎓</div></div><div><h3 class="text-2xl font-bold">Bachelor of Library and Information Systems</h3><p class="text-[#E8B923] font-medium">2025 – Present · Kyambogo University</p><p class="text-gray-600 mt-2">Specializing in digital archiving, information management, and community knowledge systems.</p></div></div>
+                <div class="flex flex-col md:flex-row gap-6 bg-white border border-gray-100 rounded-2xl p-7 shadow-sm card-lift stagger-item" data-animation="fade-up"><div class="md:w-1/4"><div class="bg-gray-100 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl">📖</div></div><div><h3 class="text-xl font-bold">UACE · 13 Points</h3><p class="text-gray-500">Literature, Entrepreneurship & Art · Light Secondary School, Bushenyi</p></div></div>
+                <div class="flex flex-col md:flex-row gap-6 bg-white border border-gray-100 rounded-2xl p-7 shadow-sm card-lift stagger-item" data-animation="fade-up"><div class="md:w-1/4"><div class="bg-gray-100 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl">📘</div></div><div><h3 class="text-xl font-bold">UCE · 11 Aggregates</h3><p class="text-gray-500">Plus Two High School, Bushenyi</p></div></div>
+                <div class="flex flex-col md:flex-row gap-6 bg-white border border-gray-100 rounded-2xl p-7 shadow-sm card-lift stagger-item" data-animation="fade-up"><div class="md:w-1/4"><div class="bg-gray-100 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl">⭐</div></div><div><h3 class="text-xl font-bold">PLE · Aggregate 4</h3><p class="text-gray-500">Prime Junior School, Bushenyi · Head Prefect</p></div></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- LEADERSHIP (dynamic) -->
+    <section id="leadership" class="py-28 bg-[#0F4C3F] text-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <span class="bg-[#E8B923] text-[#0F4C3F] px-5 py-1.5 rounded-full font-bold text-sm">LEADERSHIP ROLES</span>
+            <h2 class="heading-font text-4xl lg:text-5xl font-bold mt-4 mb-14">Proven Leadership</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-7 text-center card-lift stagger-item" data-animation="fade-up"><i class="fa-solid fa-chalkboard-user text-5xl text-[#E8B923] mb-4"></i><h4 class="font-bold text-xl">Course Coordinator</h4><p class="text-white/70 text-sm">Kyambogo University</p></div>
+                <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-7 text-center card-lift stagger-item" data-animation="fade-up"><i class="fa-solid fa-bullhorn text-5xl text-[#E8B923] mb-4"></i><h4 class="font-bold text-xl">Minister of Publicity</h4><p class="text-white/70 text-sm">Uganda Library Students Association</p></div>
+                <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-7 text-center card-lift stagger-item" data-animation="fade-up"><i class="fa-solid fa-crown text-5xl text-[#E8B923] mb-4"></i><h4 class="font-bold text-xl">Head Prefect</h4><p class="text-white/70 text-sm">Prime Junior School</p></div>
+                <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-7 text-center card-lift stagger-item" data-animation="fade-up"><i class="fa-solid fa-bed text-5xl text-[#E8B923] mb-4"></i><h4 class="font-bold text-xl">Dormitory Captain</h4><p class="text-white/70 text-sm">Pearl Junior School</p></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SKILLS & HOBBIES combined elegant -->
+    <section id="skills" class="py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12"><span class="bg-[#0F4C3F]/10 text-[#0F4C3F] px-5 py-1.5 rounded-full font-semibold">CORE COMPETENCIES</span><h2 class="heading-font text-5xl font-bold text-[#0F4C3F] mt-3">Skills & Passions</h2></div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="grid grid-cols-2 gap-5">
+                    <div class="bg-gray-50 rounded-2xl p-6 text-center card-lift stagger-item" data-animation="fade-up"><i class="fa-solid fa-people-arrows text-4xl text-[#0F4C3F] mb-3"></i><h4 class="font-bold">Leadership & Teamwork</h4></div>
+                    <div class="bg-gray-50 rounded-2xl p-6 text-center card-lift stagger-item" data-animation="fade-up"><i class="fa-solid fa-comment-dots text-4xl text-[#0F4C3F] mb-3"></i><h4 class="font-bold">PR & Communication</h4></div>
+                    <div class="bg-gray-50 rounded-2xl p-6 text-center card-lift stagger-item" data-animation="fade-up"><i class="fa-solid fa-diagram-project text-4xl text-[#0F4C3F] mb-3"></i><h4 class="font-bold">Organization & Coordination</h4></div>
+                    <div class="bg-gray-50 rounded-2xl p-6 text-center card-lift stagger-item" data-animation="fade-up"><i class="fa-solid fa-brain text-4xl text-[#0F4C3F] mb-3"></i><h4 class="font-bold">Problem Solving</h4></div>
+                </div>
+                <div class="space-y-6">
+                    <div class="flex gap-5 items-start bg-[#FEF8E7] rounded-2xl p-6 card-lift stagger-item" data-animation="fade-up"><span class="text-5xl">🧳</span><div><h4 class="font-bold text-xl">Travel & Adventure</h4><p class="text-gray-600">Exploring Uganda’s landscapes & cultures builds global mindset.</p></div></div>
+                    <div class="flex gap-5 items-start bg-[#FEF8E7] rounded-2xl p-6 card-lift stagger-item" data-animation="fade-up"><span class="text-5xl">👧</span><div><h4 class="font-bold text-xl">Mentoring Children</h4><p class="text-gray-600">Guiding young learners, reading & nurturing curiosity.</p></div></div>
+                    <div class="flex gap-5 items-start bg-[#FEF8E7] rounded-2xl p-6 card-lift stagger-item" data-animation="fade-up"><span class="text-5xl">🎵</span><div><h4 class="font-bold text-xl">Music & Reflection</h4><p class="text-gray-600">Finding inspiration through the Quran and soulful melodies.</p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CONTACT section modern -->
+    <section id="contact" class="py-28 bg-[#0F4C3F] text-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-5 stagger-item" data-animation="slide-left"><h2 class="heading-font text-5xl font-bold">Let’s connect</h2><p class="text-white/70 text-xl mt-4 mb-10">Internships, collaborations, or just a conversation — I’m ready.</p><div class="space-y-7"><div class="flex gap-5"><i class="fa-solid fa-phone-volume text-3xl text-[#E8B923]"></i><div><p class="text-white/50 text-sm">CALL</p><a href="tel:0773750844" class="text-2xl font-medium">0773 750 844</a></div></div><div class="flex gap-5"><i class="fa-solid fa-envelope text-3xl text-[#E8B923]"></i><div><p class="text-white/50 text-sm">EMAIL</p><a href="mailto:nuswaibahnakanjako@gmail.com" class="text-xl font-medium break-all">nuswaibahnakanjako@gmail.com</a></div></div><div class="flex gap-5"><i class="fa-solid fa-location-dot text-3xl text-[#E8B923]"></i><div><p class="text-white/50 text-sm">LOCATION</p><p class="text-xl font-medium">Kampala, Uganda</p></div></div></div></div>
+                <div class="lg:col-span-7 bg-white rounded-3xl p-8 text-gray-800 shadow-2xl stagger-item" data-animation="slide-right"><form id="contactForm" class="space-y-7"><div class="grid md:grid-cols-2 gap-6"><input type="text" id="name" placeholder="Full name" required class="w-full border border-gray-200 rounded-2xl px-6 py-4 focus:border-[#E8B923] outline-none transition-all"><input type="email" id="email" placeholder="Email address" required class="w-full border border-gray-200 rounded-2xl px-6 py-4 focus:border-[#E8B923] outline-none"></div><textarea id="msg" rows="5" placeholder="Your message..." required class="w-full border border-gray-200 rounded-2xl px-6 py-4 focus:border-[#E8B923] outline-none"></textarea><button type="submit" class="w-full bg-[#0F4C3F] hover:bg-[#1A5A4C] text-white font-bold py-5 rounded-2xl flex items-center justify-center gap-3 text-lg transition-all">SEND MESSAGE <i class="fa-regular fa-paper-plane"></i></button><p class="text-xs text-center text-gray-400">I’ll reply within 48 hours — let’s create impact.</p></form></div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-white py-10 border-t"><div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500"><span>© 2026 Nakanjako Nuswaibah — Aspiring Librarian & Leader</span><span class="mt-3 md:mt-0"><i class="fa-regular fa-heart text-[#E8B923]"></i> Kampala, Uganda</span></div></footer>
+    
+    <script>
+        // Enhanced animations on scroll + mobile toggle + form handler
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const anim = el.getAttribute('data-animation');
+                    if (anim === 'fade-up') el.classList.add('animate-fade-up');
+                    else if (anim === 'slide-left') el.classList.add('animate-slide-left');
+                    else if (anim === 'slide-right') el.classList.add('animate-slide-right');
+                    else if (anim === 'scale') el.classList.add('animate-scale-in');
+                    else el.classList.add('animate-fade-up');
+                    observer.unobserve(el);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: "0px 0px -20px 0px" });
+        
+        document.querySelectorAll('.stagger-item').forEach(el => observer.observe(el));
+        document.querySelectorAll('.hero-text, .hero-image, .animate-fade-up').forEach(el => { if(!el.classList.contains('stagger-item')) el.style.opacity = '1'; });
+        
+        // mobile menu
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const panel = document.getElementById('mobileMenuPanel');
+        menuBtn.addEventListener('click', () => {
+            panel.classList.toggle('hidden');
+            const icon = menuBtn.querySelector('i');
+            if(panel.classList.contains('hidden')) icon.className = 'fa-solid fa-bars';
+            else icon.className = 'fa-solid fa-xmark';
+        });
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => { panel.classList.add('hidden'); menuBtn.querySelector('i').className = 'fa-solid fa-bars'; });
+        });
+        
+        // contact form simulation
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim() || 'Valued connection';
+            alert(`✨ Thank you, ${name}! Your message has been received. I will get back to you shortly.`);
+            form.reset();
+        });
+        
+        // navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if(window.scrollY > 50) nav.classList.add('nav-scrolled');
+            else nav.classList.remove('nav-scrolled');
+        });
+        console.log('%c Nakanjako Nuswaibah | Portfolio with professional animations ready', 'background:#0F4C3F; color:#E8B923; padding:6px 12px; border-radius:12px; font-weight:bold');
+    </script>
+</body>
+</html>
